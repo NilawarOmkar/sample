@@ -1,0 +1,67 @@
+{
+    "version": "6.3",
+    "screens": [
+        {
+            "id": "screen_one",
+            "title": "Feedback 1 of 2",
+            "data": {},
+            "layout": {
+                "type": "SingleColumnLayout",
+                "children": [
+                    {
+                        "type": "Form",
+                        "name": "flow_path",
+                        "children": [
+                            {
+                                "type": "TextBody",
+                                "text": "Would you recommend us to a friend?"
+                            },
+                            {
+                                "id": "radio",
+                                "label": "Choose one",
+                                "name": "field_0_1",
+                                "type": "RadioButtonsGroup",
+                                "required": false,
+                                "data-source": [
+                                    {
+                                        "id": "yes",
+                                        "title": "Yes"
+                                    },
+                                    {
+                                        "id": "no",
+                                        "title": "No"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "TextBody",
+                                "text": "How could we do better?"
+                            },
+                            {
+                                "id": "text",
+                                "label": "Your feedback",
+                                "name": "field_0_3",
+                                "type": "TextInput",
+                                "input-type": "textarea",
+                                "placeholder": "Leave a comment (optional)",
+                                "required": false
+                            },
+                            {
+                                "type": "Footer",
+                                "label": "Done",
+                                "on-click-action": {
+                                    "name": "complete",
+                                    "payload": {
+                                        "field_0_1": "${form.field_0_1}",
+                                        "field_0_3": "${form.field_0_3}"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "terminal": true
+        }
+    ]
+}
